@@ -13,7 +13,7 @@ class GoogleMapsMatrixApiClient
     /**
      * @var string
      */
-    protected $apiKey = '';
+    protected $apiKey;
 
     /**
      * @var string
