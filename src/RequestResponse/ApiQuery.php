@@ -8,12 +8,12 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class ApiQuery extends ParameterBag implements ApiQueryInterface
 {
+
     /**
      * @return string
      */
     public function getQueryString()
     {
-
         asort($this->parameters);
 
         return http_build_query($this->parameters);
@@ -37,12 +37,14 @@ class ApiQuery extends ParameterBag implements ApiQueryInterface
      *
      * @return $this
      */
-    public function setApiKey($key)
+    public function setApiKey($key): string
     {
         $this->set('key', $key);
 
         return $this;
     }
+
+
 
 
 }

@@ -53,7 +53,7 @@ class ApiRequest implements ApiRequestInterface
      * @return ApiResponse
      * @throws \InvalidArgumentException
      */
-    public function getResponse($format = 'json')
+    public function getRequest($format = 'json')
     {
         $url = $this->getUrl();
         $query = $this->getQuery()->getQueryString();

@@ -8,7 +8,9 @@ interface ApiQueryInterface
 {
     public function getApiKey();
 
-public function setApiKey($key);
+    public function setApiKey($key):string ;
 
     public function getQueryString();
+
+
 }

@@ -6,6 +6,7 @@ namespace GoogleMaps\MatrixApi\Client;
 use GoogleMaps\MatrixApi\RequestResponse\ApiQuery;
 use GoogleMaps\MatrixApi\RequestResponse\ApiRequest;
 use GoogleMaps\MatrixApi\RequestResponse\ApiResponse;
+use GoogleMaps\MatrixApi\RequestResponse\DistanceMatrix;
 use GoogleMaps\MatrixApi\RequestResponse\ResponseParser\GoogleMapsMatrixApiResponseParser;
 
 class GoogleMapsMatrixApiClient
@@ -43,10 +44,21 @@ class GoogleMapsMatrixApiClient
         $apiQuery = new ApiQuery($searchQuery);
         $apiResponseParser = new GoogleMapsMatrixApiResponseParser();
         $url = $this->url;
-
         $apiRequest = new ApiRequest($url, $apiQuery, $apiResponseParser);
 
-        return $apiRequest->getResponse();
+        return $apiRequest->getRequest();
+    }
+
+    public function request(DistanceMatrix $distanceMatrix){
+        $defaultSearchQuery = [
+            'key' => $this->apiKey
+        ];
+        $searchQuery = array_merge($defaultSearchQuery, $distanceMatrix->createQuery());
+        $apiQuery = new ApiQuery($searchQuery);
+        $apiResponseParser = new GoogleMapsMatrixApiResponseParser();
+        $apiRequest = new ApiRequest($this->url, $apiQuery, $apiResponseParser);
+
+        return $apiRequest->getRequest();
     }
 
 }
