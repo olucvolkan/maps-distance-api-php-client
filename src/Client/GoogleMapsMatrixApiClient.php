@@ -31,25 +31,13 @@ class GoogleMapsMatrixApiClient
         $this->apiKey = $apiKey;
     }
 
+
     /**
-     * @param array $requestQueryParameters
+     * @param DistanceMatrix $distanceMatrix
      * @return ApiResponse
      */
-    public function getResponse(array $requestQueryParameters): ApiResponse
+    public function request(DistanceMatrix $distanceMatrix): ApiResponse
     {
-        $defaultSearchQuery = [
-            'key' => $this->apiKey
-        ];
-        $searchQuery = array_merge($defaultSearchQuery, $requestQueryParameters);
-        $apiQuery = new ApiQuery($searchQuery);
-        $apiResponseParser = new GoogleMapsMatrixApiResponseParser();
-        $url = $this->url;
-        $apiRequest = new ApiRequest($url, $apiQuery, $apiResponseParser);
-
-        return $apiRequest->getRequest();
-    }
-
-    public function request(DistanceMatrix $distanceMatrix){
         $defaultSearchQuery = [
             'key' => $this->apiKey
         ];

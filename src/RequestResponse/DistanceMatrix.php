@@ -10,13 +10,13 @@ class DistanceMatrix
 {
 
     /**
-     * @var array
+     * @var string
      */
-    protected $origins = [];
+    protected $origins;
     /**
-     * @var array
+     * @var string
      */
-    protected $destinations = [];
+    protected $destinations;
     /**
      * @var string
      */
@@ -26,15 +26,15 @@ class DistanceMatrix
      */
     protected $language = null;
     /**
-     * @var string
+     * @var string|null
      */
     protected $units = null;
     /**
-     * @var string
+     * @var string|null
      */
     protected $region = null;
     /**
-     * @var string
+     * @var string|null
      */
     protected $avoid = null;
     /**
@@ -46,15 +46,15 @@ class DistanceMatrix
      */
     protected $departureTime = null;
     /**
-     * @var string
+     * @var string|null
      */
     protected $trafficModel = null;
     /**
-     * @var array
+     * @var array|null
      */
     protected $transitMode = [];
     /**
-     * @var string
+     * @var string|null
      */
     protected $transitRoutingPreference = null;
 
@@ -81,36 +81,36 @@ class DistanceMatrix
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getOrigins(): array
+    public function getOrigins(): string
     {
         return $this->origins;
     }
 
     /**
-     * @param array $origins
+     * @param string $origins
      * @return DistanceMatrix
      */
-    public function setOrigins(array $origins): DistanceMatrix
+    public function setOrigins(string $origins): DistanceMatrix
     {
         $this->origins = $origins;
         return $this;
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getDestinations(): array
+    public function getDestinations(): string
     {
         return $this->destinations;
     }
 
     /**
-     * @param array $destinations
+     * @param string $destinations
      * @return DistanceMatrix
      */
-    public function setDestinations(array $destinations): DistanceMatrix
+    public function setDestinations(string $destinations): DistanceMatrix
     {
         $this->destinations = $destinations;
         return $this;
@@ -153,54 +153,54 @@ class DistanceMatrix
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getUnits(): string
+    public function getUnits(): ?string
     {
         return $this->units;
     }
 
     /**
-     * @param string $units
+     * @param string|null $units
      * @return DistanceMatrix
      */
-    public function setUnits(string $units): DistanceMatrix
+    public function setUnits(?string $units): DistanceMatrix
     {
         $this->units = $units;
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getRegion(): string
+    public function getRegion(): ?string
     {
         return $this->region;
     }
 
     /**
-     * @param string $region
+     * @param string|null $region
      * @return DistanceMatrix
      */
-    public function setRegion(string $region): DistanceMatrix
+    public function setRegion(?string $region): DistanceMatrix
     {
         $this->region = $region;
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAvoid(): string
+    public function getAvoid(): ?string
     {
         return $this->avoid;
     }
 
     /**
-     * @param string $avoid
+     * @param string|null $avoid
      * @return DistanceMatrix
      */
-    public function setAvoid(string $avoid): DistanceMatrix
+    public function setAvoid(?string $avoid): DistanceMatrix
     {
         $this->avoid = $avoid;
         return $this;
@@ -243,58 +243,59 @@ class DistanceMatrix
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTrafficModel(): string
+    public function getTrafficModel(): ?string
     {
         return $this->trafficModel;
     }
 
     /**
-     * @param string $trafficModel
+     * @param string|null $trafficModel
      * @return DistanceMatrix
      */
-    public function setTrafficModel(string $trafficModel): DistanceMatrix
+    public function setTrafficModel(?string $trafficModel): DistanceMatrix
     {
         $this->trafficModel = $trafficModel;
         return $this;
     }
 
     /**
-     * @return array
+     * @return array|null
      */
-    public function getTransitMode(): array
+    public function getTransitMode(): ?array
     {
         return $this->transitMode;
     }
 
     /**
-     * @param array $transitMode
+     * @param array|null $transitMode
      * @return DistanceMatrix
      */
-    public function setTransitMode(array $transitMode): DistanceMatrix
+    public function setTransitMode(?array $transitMode): DistanceMatrix
     {
         $this->transitMode = $transitMode;
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTransitRoutingPreference(): string
+    public function getTransitRoutingPreference(): ?string
     {
         return $this->transitRoutingPreference;
     }
 
     /**
-     * @param string $transitRoutingPreference
+     * @param string|null $transitRoutingPreference
      * @return DistanceMatrix
      */
-    public function setTransitRoutingPreference(string $transitRoutingPreference): DistanceMatrix
+    public function setTransitRoutingPreference(?string $transitRoutingPreference): DistanceMatrix
     {
         $this->transitRoutingPreference = $transitRoutingPreference;
         return $this;
     }
+
 
 
 

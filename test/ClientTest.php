@@ -2,6 +2,8 @@
 
 
 use GoogleMaps\MatrixApi\Client\GoogleMapsMatrixApiClient;
+use GoogleMaps\MatrixApi\Models\Unit;
+use GoogleMaps\MatrixApi\RequestResponse\DistanceMatrix;
 
 class ClientTest extends PHPUnit\Framework\TestCase
 {
@@ -11,14 +13,14 @@ class ClientTest extends PHPUnit\Framework\TestCase
     public function testClient()
     {
 
-        $requestParameters = [
-               'units' => 'imperial',
-            'origins' => '36.85773400000000,31.03660900000000',
-            'destinations' => '36.89928000000000,30.80135000000000',
-        ];
+        $distanceMatrix = new DistanceMatrix();
+
+        $distanceMatrix->setOrigins('36.85773400000000,31.03660900000000')
+            ->setDestinations('36.89928000000000,30.80135000000000')
+            ->setUnits(Unit::IMPERIAL);
 
         $matrixClient = new GoogleMapsMatrixApiClient(self::API_KEY);
-        $result = $matrixClient->getResponse($requestParameters)->getResults();
+        $result = $matrixClient->request($distanceMatrix)->getResults();
         $this->assertArrayHasKey('distanceKm', $result);
 
 
