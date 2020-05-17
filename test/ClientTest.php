@@ -2,27 +2,35 @@
 
 
 use GoogleMaps\MatrixApi\Client\GoogleMapsMatrixApiClient;
+use GoogleMaps\MatrixApi\Models\Result;
 use GoogleMaps\MatrixApi\Models\Unit;
 use GoogleMaps\MatrixApi\RequestResponse\DistanceMatrix;
 
-class ClientTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+class ClientTest extends TestCase
 {
 
     private const API_KEY = '';
 
-    public function testClient()
+    public function testClient(): void
     {
 
         $distanceMatrix = new DistanceMatrix();
 
-        $distanceMatrix->setOrigins('36.85773400000000,31.03660900000000')
-            ->setDestinations('36.89928000000000,30.80135000000000')
+        $distanceMatrix->setOrigins('Vancouver, BC, Canada | Seattle, État de Washington, États-Unis')
+            ->setDestinations('San Francisco, Californie | États-Unis,Victoria, BC, Canada')
             ->setUnits(Unit::IMPERIAL);
 
         $matrixClient = new GoogleMapsMatrixApiClient(self::API_KEY);
         $result = $matrixClient->request($distanceMatrix)->getResults();
-        $this->assertArrayHasKey('distanceKm', $result);
 
+        $this->assertInstanceOf(Result::class,$result);
+        $resultArray = $result->jsonSerialize();
+
+        $this->assertArrayHasKey('status',$resultArray);
+        $this->assertArrayHasKey('originAddressses',$resultArray);
+        $this->assertArrayHasKey('destinationsAddresses',$resultArray);
+        $this->assertArrayHasKey('items',$resultArray);
 
     }
 

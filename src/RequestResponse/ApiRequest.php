@@ -14,8 +14,14 @@ class ApiRequest implements ApiRequestInterface
      */
     private $url;
 
+    /**
+     * @var ApiQueryInterface
+     */
     private $query;
 
+    /**
+     * @var GoogleApiResponseParserInterface
+     */
     private $googleApiResponseParser;
 
     public function __construct($url,ApiQueryInterface $query = null,GoogleApiResponseParserInterface $googleApiResponseParser = null)
@@ -33,7 +39,7 @@ class ApiRequest implements ApiRequestInterface
         return $this->url;
     }
 
-    public function getQuery()
+    public function getQuery(): ApiQueryInterface
     {
         if (empty($this->query)) {
             throw new MissingApiQueryException();

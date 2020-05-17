@@ -6,6 +6,7 @@ namespace GoogleMaps\MatrixApi\RequestResponse;
 
 
 
+use GoogleMaps\MatrixApi\Models\Result;
 use GoogleMaps\MatrixApi\RequestResponse\ResponseParser\GoogleApiResponseParserInterface;
 
 class ApiResponse implements ApiResponseInterface
@@ -20,8 +21,9 @@ class ApiResponse implements ApiResponseInterface
         $this->parser = $parser;
     }
 
+
     /**
-     * @return array
+     * @return Result
      */
     public function getResults()
     {
