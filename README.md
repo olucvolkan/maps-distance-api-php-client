@@ -6,7 +6,7 @@ Please refer to Google Distance Matrix API documentation for further details on 
 
 ###### Installation
 
-`composer require php-google-matrix-distance-api-client
+`composer require volk/php-google-matrix-distance-api-client
 `
 ###### Basic Usage
 
