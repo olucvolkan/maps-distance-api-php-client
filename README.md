@@ -34,3 +34,22 @@ Please refer to Google Distance Matrix API documentation for further details on 
                         $item->getDuration()->getValue();
                         $item->getDuration()->getUnitValue();
                 }
+ 
+ 
+ 
+ ###### Request Parameters Options
+
+| Field      | Type | Description     | Required
+| :---        |    :----:   |          ---: |          ---: |
+| origins      | string       | Origin Point Coordinate or Place Name   | True
+| destinations   | string        | Destinations Point Coordinate or Place Name      | True
+| mode   | string        | Travel Mode (driving,walking etc.)     | False
+| language   | string        | Response Language     | False
+|  unit   | string        | Distance unit      | False
+|  trafficModel   | string        | Traffic Type (best_guess,pessimistic) | False
+
+
+
+###### Example Response
+![Example Response](https://pasteboard.co/JaFEpGD.png) 
+
