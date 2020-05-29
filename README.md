@@ -49,6 +49,23 @@ Please refer to Google Distance Matrix API documentation for further details on 
 |  trafficModel   | string        | Traffic Type (best_guess,pessimistic) | False
 
 
+ ###### Response Fields
+
+| Field      | Type | Description     
+| :---        |    :----:   |          ---: |         
+| status      | string       |  Api response status type OK , FAILED etc.
+| originAddresses      | array       |  Origin Addresses list
+| destinationsAddresses      | array       |  Destinations Addresses list
+ | items      | array       |  Response Items
+
+###### Response Item Fields
+| Field      | Type | Description     
+| :---        |    :----:   |          ---: |         
+| distance      | object       |  Distance unformatted value and unit value
+| duration      | object       |  Durations unformatted value and unit value
+| status      | string       |  Status OK , FAILED
+| originAddress      | string       |  Single Origin Address
+| destinationAddress      | string       |  Single Destination Address
 
 ###### Example Response
 
