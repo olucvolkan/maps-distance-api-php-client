@@ -1,5 +1,5 @@
 {
-    "name": "php-google-matrix-distance-api-client",
+    "name": "volk/php-google-matrix-distance-api-client",
     "description": "Google matrix api for php implementation",
     "keywords": ["distance", "maps-api", "google"],
     "authors": [
