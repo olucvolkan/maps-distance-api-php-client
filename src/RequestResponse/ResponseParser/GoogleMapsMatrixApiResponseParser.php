@@ -50,20 +50,11 @@ class GoogleMapsMatrixApiResponseParser implements GoogleApiResponseParserInterf
 
     }
 
-    public function parseQueries($content)
-    {
-        // TODO: Implement parseQueries() method.
-    }
-
     public function parseError($content)
     {
         // TODO: Implement parseError() method.
     }
 
-    public function parseSearchInformation($content)
-    {
-        // TODO: Implement parseSearchInformation() method.
-    }
 
 
 }
