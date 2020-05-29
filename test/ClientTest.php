@@ -24,14 +24,13 @@ class ClientTest extends TestCase
         $matrixClient = new GoogleMapsMatrixApiClient(self::API_KEY);
         $result = $matrixClient->request($distanceMatrix)->getResults();
 
-        $this->assertInstanceOf(Result::class,$result);
+        $this->assertInstanceOf(Result::class, $result);
         $resultArray = $result->jsonSerialize();
 
-        $this->assertArrayHasKey('status',$resultArray);
-        $this->assertArrayHasKey('originAddressses',$resultArray);
-        $this->assertArrayHasKey('destinationsAddresses',$resultArray);
-        $this->assertArrayHasKey('items',$resultArray);
+        $this->assertArrayHasKey('status', $resultArray);
+        $this->assertArrayHasKey('originAddressses', $resultArray);
+        $this->assertArrayHasKey('destinationsAddresses', $resultArray);
+        $this->assertArrayHasKey('items', $resultArray);
 
     }
-
 }

@@ -51,5 +51,7 @@ Please refer to Google Distance Matrix API documentation for further details on 
 
 
 ###### Example Response
-![Example Response](https://pasteboard.co/JaFEpGD.png) 
+
+![example response](https://img.techpowerup.org/200529/screen-shot-2020-05-30-at-00-29-59.png"Example Response")  
+ 
 
