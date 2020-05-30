@@ -72,3 +72,6 @@ Please refer to Google Distance Matrix API documentation for further details on 
 ![example response](https://img.techpowerup.org/200529/screen-shot-2020-05-30-at-00-29-59.png)  
  
 
+###### TODO
+
+- Exception Response Structure must be created
