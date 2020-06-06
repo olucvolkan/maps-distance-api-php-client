@@ -1,29 +1,29 @@
 {
-    "name": "volk/php-google-matrix-distance-api-client",
-    "description": "Google matrix api for php implementation",
-    "keywords": ["distance", "maps-api", "google"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Volkan Oluç",
-            "email": "volkanoluc@gmail.com"
-        }
-    ],
-    "type": "library",
-    "require": {
-		"php": ">=7.1",
-        "symfony/http-foundation": "^5.0",
-        "ext-curl": "^7.2",
-        "ext-json": "*"
-    },
-    "require-dev": {
-		"phpunit/phpunit": "6.*",
-        "symfony/http-foundation": "^5.0",
-        "ext-curl": "^7.2"
-    },
-    "autoload": {
-        "psr-4": {
-            "GoogleMaps\\MatrixApi\\": "src/"
-        }
+  "name": "volk/php-google-matrix-distance-api-client",
+  "description": "Google matrix api for php implementation",
+  "keywords": [
+    "distance",
+    "maps-api",
+    "google"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Volkan Oluç",
+      "email": "volkanoluc@gmail.com"
     }
+  ],
+  "type": "library",
+  "require": {
+    "php": ">=7.1",
+    "symfony/http-foundation": "^5.0",
+    "ext-curl": "^7.2",
+    "ext-json": "*",
+    "phpunit/phpunit": "6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "GoogleMaps\\MatrixApi\\": "src/"
+    }
+  }
 }
