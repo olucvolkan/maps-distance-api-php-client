@@ -6,17 +6,29 @@ namespace GoogleMaps\MatrixApi\RequestResponse;
 use GoogleMaps\MatrixApi\RequestResponse\Exception\MissingApiKeyException;
 use GoogleMaps\MatrixApi\RequestResponse\Exception\MissingDestinationsException;
 use GoogleMaps\MatrixApi\RequestResponse\Exception\MissingOriginsException;
-use Symfony\Component\HttpFoundation\ParameterBag;
 
-class ApiQuery extends ParameterBag implements ApiQueryInterface
+
+
+class ApiQuery extends ParametersCheck implements ApiQueryInterface
 {
+
+    /**
+     * @var array
+     */
+    public $parameters;
+
+    public function __construct(array $parameters)
+    {
+        $this->parameters = $parameters;
+        parent::__construct($parameters);
+    }
 
     /**
      * @return string
      */
     public function getQueryString()
     {
-        asort($this->parameters);
+        arsort($this->parameters);
 
         return http_build_query($this->parameters);
     }
