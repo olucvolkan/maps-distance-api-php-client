@@ -16,7 +16,14 @@
   "type": "library",
   "require": {
     "php": ">=7.1",
-    "symfony/http-foundation": "^5.0",
+    "symfony/http-foundation": "*",
+    "ext-curl": "^7.2",
+    "ext-json": "*",
+    "phpunit/phpunit": "6.*"
+  },
+  "require-dev": {
+    "php": ">=7.1",
+    "symfony/http-foundation": "*",
     "ext-curl": "^7.2",
     "ext-json": "*",
     "phpunit/phpunit": "6.*"
@@ -25,5 +32,6 @@
     "psr-4": {
       "GoogleMaps\\MatrixApi\\": "src/"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
